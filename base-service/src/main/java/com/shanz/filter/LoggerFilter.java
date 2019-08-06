@@ -8,4 +8,5 @@ package com.shanz.filter;
  * @Version V1.0
  **/
 public class LoggerFilter {
+    // todo 这里应该使用dubbo的filter机制实现响应的链路日志记录
 }
