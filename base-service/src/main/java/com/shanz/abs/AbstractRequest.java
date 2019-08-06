@@ -1,0 +1,35 @@
+package com.shanz.abs;
+
+import java.io.Serializable;
+
+/**
+ * @ClassName AbstractRequest
+ * @Description: 请求默认
+ * @Author shanz
+ * @Date 2019/8/5
+ * @Version V1.0
+ **/
+public abstract class AbstractRequest implements Serializable {
+
+    private static final long serialVersionUID = -5388747731737252810L;
+
+    private String code;    //状态码
+
+    private String message; //信息
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+}
