@@ -9,7 +9,7 @@
        http://www.springframework.org/schema/context/spring-context-4.3.xsd"
 	   default-autowire="byName">
 
-	<context:property-placeholder location="classpath:application.properties" />
+	<context:property-placeholder location="classpath:application.properties"  file-encoding="UTF-8" />
 
 	<bean id="userDataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close"
 		  p:url="${datasource.user.url}"
@@ -33,17 +33,16 @@
 	<bean id="userSqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="userDataSource" />
 		<property name="typeAliasesPackage"
-				  value="com.gupaoedu.user.dal.entity" />
+				  value="com.shanz.dal.entity" />
 		<property name="mapperLocations" value="classpath*:com/shanz/dal/mapper/*Mapper.xml" />
 	</bean>
 
 	<bean name="userMapperScannerConfigurer" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 		<property name="basePackage"
-				  value="com.gupaoedu.user.dal.persistence" />
-		<property name="sqlSessionFactory" ref="userSqlSessionFactory" />
+				  value="com.shanz.dal.mapper" />
+		<property name="sqlSessionFactoryBeanName" value="userSqlSessionFactory" />
 	</bean>
 
-	<context:component-scan base-package="com.shanz.dal" />
-	<context:component-scan base-package="com.shanz.services" />
+	<context:component-scan base-package="com.shanz" />
 
 </beans>

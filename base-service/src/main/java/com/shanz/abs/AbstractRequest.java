@@ -13,23 +13,8 @@ public abstract class AbstractRequest implements Serializable {
 
     private static final long serialVersionUID = -5388747731737252810L;
 
-    private String code;    //状态码
-
-    private String message; //信息
-
-    public String getCode() {
-        return code;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
-    }
-
-    public String getMessage() {
-        return message;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
+    @Override
+    public String toString() {
+        return "AbstractRequest{}";
     }
 }
